@@ -1,27 +1,32 @@
+--[[ 
+===========================================================
 
+              - Harfang - www.harfang3d.com
 
+                       - Lua -
 
--- ---------- Inits --------------
+       Basic initialisations and use of main devices
 
---gs.MountFileDriver(gs.StdFileDriver())
---gs.LoadPlugins(gs.get_default_plugins_path())
+=========================================================== 
+]]
 
 -- ---------- Display object and Output screen:
 
 renderer = gs.EglRenderer()
 renderer:Open(640,480)
 
------------- Get devices:
+------------ Check devices:
 
 print ("Installed devices:")
 devices = gs.GetInputSystem():GetDevices()
 for k,device in pairs(devices) do
     print("Id: " .. device:GetId() .. " - Name : " .. device:GetName())
 end
-	
+
+------------ Get devices:
+
 keyboard_device = gs.GetInputSystem():GetDevice("keyboard")
 mouse_device = gs.GetInputSystem():GetDevice("mouse")
-
 
 
 ------------ Main loop:
